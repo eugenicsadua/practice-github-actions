@@ -5,13 +5,14 @@ on:
 
 jobs: 
     first_job: 
+        name: jomacs-k8s
         runs-on: ubuntu-latest
         steps:
             - name: Welcome Message
-              run: echo "My first GitHub Actions Job"
+              run: echo "Welcome to the world of GitHub Actions Job"
 
             - name: List Files 
-              run: ls 
+              run: ls -1a
 
-            - name: Read file 
-              run: cat dockerfile
+            - name: show working directory
+              run: pwd
