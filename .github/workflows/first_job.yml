@@ -14,5 +14,5 @@ jobs:
               run: |
                 echo "My first GitHu Actions Job"
                 ls -1
-                cat Dockerfile
+                cat dockerfile
 
