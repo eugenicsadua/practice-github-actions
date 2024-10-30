@@ -8,8 +8,7 @@ env:
     IMAGE_NAME: resume-app
 
 jobs: 
-  docker_build: name: Docker Workflow
-
+  docker_build: 
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
