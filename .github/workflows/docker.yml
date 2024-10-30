@@ -1,0 +1,29 @@
+name: Docker Workflow
+
+on:
+  - push
+  
+jobs: 
+  docker_build: 
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Docker Build with dockerhub username to enable docker push
+      run: docker build -t docker.io/eugenicsadua/resume-app:latest .
+
+    - name: Docker login
+      run: docker login --username=eugenicsadua --password=520Ea163Pablodevops$
+
+    - name: Docker Publish 
+      run: docker push docker.io/eugenicsadua/resume-app:latest
+
+  docker_deploy:
+    needs: docker_build
+    runs-on: ubuntu-latest 
+    steps:
+      - name: docker login
+        run: docker login --username=eugenicsadua --password=520Ea163Pablodevops$
+      - name: docker run
+        run: docker run -d -p 8080:80 docker.io/efotsowoe/resume-app:latest
