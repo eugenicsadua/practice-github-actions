@@ -1,15 +1,8 @@
 name: Docker Workflow plus pipeline triggers
 
 on:
-  push:
-     branches:
-        - main
-     paths-ignore:
-        - .github/**
-        - dockerignore
-        - gitignore
-        - README.md
-        -  LICENSE
+  schedule: 
+    - cron: '*/1 * * * *' 
   workflow_dispatch:
 
 env:
