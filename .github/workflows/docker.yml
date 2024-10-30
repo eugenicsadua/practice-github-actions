@@ -12,7 +12,9 @@ jobs:
 
     - name: Docker Build with dockerhub username to enable docker push
       run: docker build -t docker.io/aduaeugene/resume-app:latest .
-
+    - name: list docker images
+      run: docker images
+      
     - name: Docker login
       run: docker login --username=aduaeugene --password=520Ea163Pablodevops$
 
