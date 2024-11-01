@@ -2,7 +2,7 @@ name: Docker Workflow plus pipeline triggers
 
 on:
   schedule: 
-    - cron:  '*/5 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 env:
